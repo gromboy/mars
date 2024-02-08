@@ -52,7 +52,7 @@ def prom_img():
                   <body>
                   <h1 style="color: red;">Жди нас, Марс!</h1>
                   <img src="{url_for('static', filename='img/mars.png')}"/>
-                  
+
                   <div class="alert alert-primary" role="alert">
                       Человечество вырастает из детства.
                     </div>
@@ -70,6 +70,13 @@ def prom_img():
                   </body>
                 </html>'''
 
+@app.route('/astronaut_selection')
+def selection():
+    with open('aaustronats.html', encoding='utf8') as file:
+        return file.read()
+
 
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
+
+
